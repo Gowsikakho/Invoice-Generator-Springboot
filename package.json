@@ -13,6 +13,7 @@
     "@clerk/clerk-react": "^5.55.0",
     "axios": "^1.13.2",
     "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.3",
     "lucide-react": "^0.553.0",

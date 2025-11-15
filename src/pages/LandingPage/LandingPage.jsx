@@ -1,5 +1,6 @@
 import React from "react";
 import assets from "../../assets/assets.js";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const LandingPage = () => {
   return (
@@ -189,6 +190,40 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* FOOTER CTA */}
+      <footer className="py-5 text-white text-center" style={{ backgroundColor: '#0056FF' }}>
+        <div className="container">
+          <h2 className="fw-bold mb-3 display-6">Ready to Streamline Your Invoicing?</h2>
+          <p className="mb-4" style={{ fontSize: '1.1rem' }}>
+            Join thousands of freelancers and small businesses who trust QuickInvoice. Start creating professional
+            invoices today — it's fast, easy, and effective!
+          </p>
+          <button className="btn btn-warning btn-lg fw-bold rounded-pill px-4">
+            Start Generating Invoices Now
+          </button>
+          <p className="mt-3 small opacity-75">(This will lead to the invoice generation interface)</p>
+        </div>
+      </footer>
+
+      {/* DARK BOTTOM FOOTER */}
+      <footer className="py-4 text-white" style={{ backgroundColor: '#0B0F19' }}>
+        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+          <div className="mb-3 mb-md-0 d-flex align-items-center gap-2">
+            <img src={assets.logo || "https://via.placeholder.com/40"} alt="Logo" width="40" height="40" className="me-2" />
+            <span className="fw-bold">QuickInvoice</span>
+          </div>
+
+          <p className="mb-3 mb-md-0 small opacity-75">© 2025 QuickInvoice. All rights reserved.</p>
+
+          <div className="d-flex gap-3">
+            <a href="#" className="text-white fs-5"><Twitter /></a>
+            <a href="#" className="text-white fs-5"><Facebook /></a>
+            <a href="#" className="text-white fs-5"><Instagram /></a>
+            <a href="#" className="text-white fs-5"><Linkedin /></a>
+          </div>
+        </div>
+      </footer>
 
     </>
   );
