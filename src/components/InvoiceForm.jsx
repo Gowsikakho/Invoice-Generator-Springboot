@@ -1,7 +1,25 @@
 import {assets} from "../assets/assets";
 import { Trash2 } from "lucide-react";
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
 const InvoiceForm = () => {
+    const {invoiceData, setInvoiceData} = useContext(AppContext);
+
+    const addItem = () =>{
+        setInvoiceData((prev)=>({
+            ...prev,
+            items:[
+                ...prev.items,
+                {name:"",qty:"",amount:"",description:"",total:0},
+            ]
+        }))
+    }
+
+    const deleteItem = (index) =>{
+        const items = invoiceData.items.filter((_,i) => i!==index);
+        setInvoiceData((prev) =>({...prev,items}));
+    }
     return (
         <div className="invoiceform container py-4">
             {/*Company logo*/}
@@ -88,29 +106,34 @@ const InvoiceForm = () => {
             {/*Item details*/}
             <div className="md-4 mt-4">
                 <h5>Item Details</h5>
-                <div className="card p-3 mb-3">
-                    <div className="row g-3 mb-2">
-                        <div className="col-md-3">
-                            <input type="text" className="form-control" placeholder="Item Name"/>
+                {
+                   invoiceData.items.map((item,index)=>(
+                        <div key={index} className="card p-3 mb-3">
+                        <div className="row g-3 mb-2">
+                            <div className="col-md-3">
+                                <input type="text" className="form-control" placeholder="Item Name"/>
+                            </div>
+                            <div className="col-md-3">
+                                <input type="number" placeholder="qty" className="form-control" />
+                            </div>
+                            <div className="col-md-3">
+                                <input type="number" placeholder="Amount" className="form-control"/>
+                            </div>
+                            <div className="col-md-3">
+                                <input type="number" className="form-control" placeholder="Total"/>
+                            </div>
                         </div>
-                        <div className="col-md-3">
-                            <input type="number" placeholder="qty" className="form-control" />
-                        </div>
-                        <div className="col-md-3">
-                            <input type="number" placeholder="Amount" className="form-control"/>
-                        </div>
-                        <div className="col-md-3">
-                            <input type="number" className="form-control" placeholder="Total"/>
+                        <div className="d-flex gap-2">
+                            <textarea className="form-control" placeholder="Description"></textarea>
+                            {invoiceData.items.length>1 &&(
+                                <button className="btnbtn-outline-danger" type="button" onClick={()=>deleteItem(index)}>
+                                <Trash2 size={18} />
+                            </button>
+                            )}
                         </div>
                     </div>
-                    <div className="d-flex gap-2">
-                        <textarea className="form-control" placeholder="Description"></textarea>
-                        <button className="btnbtn-outline-danger" type="button">
-                            <Trash2 size={18} />
-                        </button>
-                    </div>
-                </div>
-                <button className="btn btn-primary" type="button">Add Item</button>
+                   ))}
+                <button className="btn btn-primary" type="button" onClick={addItem}>Add Item</button>
             </div>
             {/*Bank account info*/}
             <div className="md-4 mt-4">
