@@ -1,16 +1,51 @@
+// MainPage.jsx
 import { useState, useContext } from "react";
 import { Pencil } from "lucide-react";
-import { AppContext } from "../context/AppContext"; // <-- Add this
+import { AppContext } from "../context/AppContext";
 import InvoiceForm from "../components/InvoiceForm.jsx";  
 import TemplateGrid from "../components/TemplateGrid.jsx";  
+import { toast } from "react-toastify";
 
 const MainPage = () => {
 
     const [isEditingTitle, setIsEditingTitle] = useState(false);
-    const { invoiceTitle, setInvoiceTitle } = useContext(AppContext);
+
+    const { 
+        invoiceTitle, 
+        setInvoiceTitle, 
+        invoiceData, 
+        setInvoiceData, 
+        setSelectedTemplate 
+    } = useContext(AppContext);
+
+    const handleTemplateClick = (templateId) => {
+
+        // ❌ Case 1 – No items added
+        if (invoiceData.items.length === 0) {
+            toast.error("Please add at least one item before choosing a template.");
+            return;
+        }
+
+        // ❌ Case 2 – Missing qty or amount
+        const hasInvalidItems = invoiceData.items.some(
+            (item) => !item.qty || !item.amount
+        );
+
+        if (hasInvalidItems) {
+            toast.error("Please enter quantity and amount for all items before choosing a template.");
+            return;
+        }
+
+        // ✔ Everything valid
+        setSelectedTemplate(templateId);
+    };
 
     const handleTitleChange = (e) => {
         setInvoiceTitle(e.target.value);
+        setInvoiceData((prev) => ({
+            ...prev,
+            title: e.target.value,
+        }));
     };
 
     const handleTitleEdit = () => {
@@ -24,9 +59,10 @@ const MainPage = () => {
     return (
         <div className="mainpage container-fluid bg-light min-vh-100 py-4">
             <div className="container">
+                
+                {/* Title Section */}
                 <div className="bg-white border rounded shadow-sm p-3 mb-4">
                     <div className="d-flex align-items-center">
-
                         {isEditingTitle ? (
                             <input
                                 type="text"
@@ -47,13 +83,11 @@ const MainPage = () => {
                                 </button>
                             </>
                         )}
-
                     </div>
                 </div>
 
-                {/* Invoice form and template grid */}
-                <div className="row g-4 align-items stretch">
-
+                {/* Invoice Form + Templates */}
+                <div className="row g-4 align-items-stretch">
                     <div className="col-12 col-lg-6 d-flex">
                         <div className="bg-white border rounded shadow-sm p-4 w-100">
                             <InvoiceForm />
@@ -62,11 +96,11 @@ const MainPage = () => {
 
                     <div className="col-12 col-lg-6 d-flex">
                         <div className="bg-white border rounded shadow-sm p-4 w-100">
-                            <TemplateGrid />
+                            <TemplateGrid onTemplateClick={handleTemplateClick} />
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     );
