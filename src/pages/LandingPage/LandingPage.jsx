@@ -74,33 +74,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* FEATURES SECTION */}
-      <section id="features" className="py-5">
-        <div className="container">
-          <div className="row align-items-center gy-4">
-            <div className="col-md-6">
-              <img
-                src={assets.landing}
-                className="img-fluid rounded shadow-lg"
-                alt="Invoice Customization"
-                onError={(e) => {
-                  e.target.src = "https://via.placeholder.com/500x350?text=Image+Not+Found";
-                }}
-              />
-            </div>
-            <div className="col-md-6">
-              <h3 className="fw-bold mx-2">Easy to fill invoice details</h3>
-              <p className="text-muted lead fs-6 mx-2">Quickly create professional invoices with easy fields and smart calculations.</p>
-              <ul className="list-unstyled text-muted mx-2">
-                <li className="mb-2"><i className="bi bi-check2-circle text-success me-2"></i>Add items with price, quantity & tax</li>
-                <li className="mb-2"><i className="bi bi-check2-circle text-success me-2"></i>Auto-calculates totals and discounts</li>
-                <li className="mb-2"><i className="bi bi-check2-circle text-success me-2"></i>Customize invoice theme & layout</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* WHY CHOOSE QUICKINVOICE SECTION */}
       <section id="why-choose" className="py-5 bg-light">
         <div className="container text-center">
