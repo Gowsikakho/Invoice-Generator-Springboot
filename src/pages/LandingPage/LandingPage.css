@@ -1,3 +1,50 @@
+/* FAQ FLIP CARDS */
+.faq-card {
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.faq-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.faq-card:hover .faq-card-inner {
+  transform: rotateY(180deg);
+}
+
+.faq-card-front, .faq-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-card-front {
+  background: linear-gradient(135deg, #0056FF 0%, #003d99 100%);
+  color: white;
+}
+
+.faq-card-back {
+  background: linear-gradient(135deg, #4285f4 0%, #1976d2 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
 /* GENERAL RESETS */
 body {
   font-family: 'Inter', sans-serif;
@@ -11,13 +58,13 @@ body {
 }
 
 /* BUTTON HOVER */
-.btn-warning:hover {
-  background-color: #e9b000 !important;
+.btn-primary:hover {
+  background-color: #003d99 !important;
 }
 
 .btn-outline-light:hover {
   background-color: white !important;
-  color: #010851 !important;
+  color: #0056FF !important;
 }
 
 /* HOW IT WORKS – WAVY CARDS */
@@ -46,10 +93,10 @@ body {
   z-index: 1;
 }
 
-.wave-1 path { fill: #d7e3ff; }
-.wave-2 path { fill: #c5f4d0; }
-.wave-3 path { fill: #ffe9b8; }
-.wave-4 path { fill: #ffc9c9; }
+.wave-1 path { fill: #e3f2fd; }
+.wave-2 path { fill: #bbdefb; }
+.wave-3 path { fill: #90caf9; }
+.wave-4 path { fill: #64b5f6; }
 
 .wavy-step {
   position: absolute;
@@ -128,7 +175,7 @@ footer p {
   font-size: 1.1rem;
 }
 
-footer .btn-warning {
+footer .btn-primary {
   padding: 12px 28px;
   font-size: 1.2rem;
   border-radius: 50px;

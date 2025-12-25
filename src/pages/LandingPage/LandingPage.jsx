@@ -1,4 +1,5 @@
 import React from "react";
+import "./LandingPage.css";
 import assets from "../../assets/assets.js";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
@@ -16,7 +17,7 @@ const LandingPage = () => {
           <p className="lead mb-5" style={{ fontSize: "1.3rem" }}>
             Stop wrestling with spreadsheets. QuickInvoice helps you create and send invoices instantly.
           </p>
-          <button className="btn btn-lg btn-warning fw-bold rounded-pill my-2 px-4">
+          <button className="btn btn-lg btn-primary fw-bold rounded-pill my-2 px-4">
             Generate Your First Invoice
           </button>
           <br />
@@ -164,6 +165,98 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* FAQ SECTION */}
+      <section id="faq" className="py-5 bg-light">
+        <div className="container">
+          <h2 className="text-center mb-5 display-5 fw-bold">Frequently Asked Questions</h2>
+          <div className="row g-4">
+            <div className="col-md-6 col-lg-4">
+              <div className="faq-card">
+                <div className="faq-card-inner">
+                  <div className="faq-card-front">
+                    <h5 className="fw-bold">Is QuickInvoice free to use?</h5>
+                    <p className="text-muted">Hover to see answer</p>
+                  </div>
+                  <div className="faq-card-back">
+                    <p>Yes! QuickInvoice offers a free plan that allows you to create and download unlimited invoices. Premium features are available for advanced users.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="col-md-6 col-lg-4">
+              <div className="faq-card">
+                <div className="faq-card-inner">
+                  <div className="faq-card-front">
+                    <h5 className="fw-bold">Can I customize invoice templates?</h5>
+                    <p className="text-muted">Hover to see answer</p>
+                  </div>
+                  <div className="faq-card-back">
+                    <p>Absolutely! You can add your logo, customize colors, and modify fields to match your brand. Choose from 12+ professional templates.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="col-md-6 col-lg-4">
+              <div className="faq-card">
+                <div className="faq-card-inner">
+                  <div className="faq-card-front">
+                    <h5 className="fw-bold">How do I send invoices to clients?</h5>
+                    <p className="text-muted">Hover to see answer</p>
+                  </div>
+                  <div className="faq-card-back">
+                    <p>You can download invoices as PDF files and send them via email, or use our built-in email feature to send directly from the platform.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="col-md-6 col-lg-4">
+              <div className="faq-card">
+                <div className="faq-card-inner">
+                  <div className="faq-card-front">
+                    <h5 className="fw-bold">Is my data secure?</h5>
+                    <p className="text-muted">Hover to see answer</p>
+                  </div>
+                  <div className="faq-card-back">
+                    <p>Yes! We use industry-standard encryption to protect your data. Your invoice information is stored securely and never shared with third parties.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="col-md-6 col-lg-4">
+              <div className="faq-card">
+                <div className="faq-card-inner">
+                  <div className="faq-card-front">
+                    <h5 className="fw-bold">Can I track payment status?</h5>
+                    <p className="text-muted">Hover to see answer</p>
+                  </div>
+                  <div className="faq-card-back">
+                    <p>Payment tracking is available in our premium plan. You can mark invoices as paid, pending, or overdue in your dashboard.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="col-md-6 col-lg-4">
+              <div className="faq-card">
+                <div className="faq-card-inner">
+                  <div className="faq-card-front">
+                    <h5 className="fw-bold">Do I need to create an account?</h5>
+                    <p className="text-muted">Hover to see answer</p>
+                  </div>
+                  <div className="faq-card-back">
+                    <p>No account required for basic use! You can create and download invoices instantly. Sign up to save your data and access advanced features.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER CTA */}
       <footer className="py-5 text-white text-center" style={{ backgroundColor: '#0056FF' }}>
         <div className="container">
@@ -172,7 +265,7 @@ const LandingPage = () => {
             Join thousands of freelancers and small businesses who trust QuickInvoice. Start creating professional
             invoices today — it's fast, easy, and effective!
           </p>
-          <button className="btn btn-warning btn-lg fw-bold rounded-pill px-4">
+          <button className="btn btn-primary btn-lg fw-bold rounded-pill px-4">
             Start Generating Invoices Now
           </button>
           <p className="mt-3 small opacity-75">(This will lead to the invoice generation interface)</p>

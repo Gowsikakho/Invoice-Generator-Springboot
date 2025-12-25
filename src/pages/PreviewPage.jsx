@@ -52,7 +52,7 @@ const PreviewPage = () => {
                             style={{minWidth:"100px",height: "38px"}}
                             className={`btn btn-sm rounded-pill p-2 ${
                                 selectedTemplate === id
-                                    ? "btn-warning"
+                                    ? "btn-primary"
                                     : "btn-outline-secondary"
                             }`}
                             onClick={() => handleTemplateSelect(id)}
