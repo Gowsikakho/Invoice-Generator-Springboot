@@ -1,10 +1,11 @@
 import { assets } from "../assets/assets";
-import { Trash2 } from "lucide-react";
+import { Trash2, Plus } from "lucide-react";
 import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
+import { toast } from "react-toastify";
 
 const InvoiceForm = () => {
-  const { invoiceData, setInvoiceData } = useContext(AppContext);
+  const { invoiceData, setInvoiceData, errors, validateInvoiceData } = useContext(AppContext);
 
   const safe = (val) => (val ?? ""); // prevents uncontrolled input warnings
 
@@ -42,8 +43,12 @@ const InvoiceForm = () => {
     const items = [...(invoiceData.items || [])];
     items[index] = { ...items[index], [field]: value };
 
-    items[index].total =
-      Number(items[index].qty || 0) * Number(items[index].amount || 0);
+    // Auto-calculate total when qty or amount changes
+    if (field === 'qty' || field === 'amount') {
+      const qty = Number(field === 'qty' ? value : items[index].qty || 0);
+      const amount = Number(field === 'amount' ? value : items[index].amount || 0);
+      items[index].total = qty * amount;
+    }
 
     setInvoiceData((prev) => ({ ...prev, items }));
   };
@@ -64,9 +69,25 @@ const InvoiceForm = () => {
   const handleLogoUpload = (e) => {
     const file = e.target.files?.[0];
     if (file) {
+      // Validate file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        toast.error("File size should be less than 5MB");
+        return;
+      }
+      
+      // Validate file type
+      if (!file.type.startsWith('image/')) {
+        toast.error("Please select a valid image file");
+        return;
+      }
+
       const reader = new FileReader();
       reader.onloadend = () => {
         setInvoiceData((prev) => ({ ...prev, logo: reader.result }));
+        toast.success("Logo uploaded successfully");
+      };
+      reader.onerror = () => {
+        toast.error("Failed to upload logo");
       };
       reader.readAsDataURL(file);
     }
@@ -340,12 +361,20 @@ const InvoiceForm = () => {
         ))}
 
         <div className="mt-2">
-          <button className="btn btn-primary me-2" type="button" onClick={addItem}>
+          <button 
+            className="btn btn-primary me-2 d-flex align-items-center gap-2" 
+            type="button" 
+            onClick={addItem}
+          >
+            <Plus size={16} />
             Add Item
           </button>
           {/* if no items, show a small helper */}
           {(invoiceData.items || []).length === 0 && (
             <small className="text-muted ms-2">Add at least one item to enable templates</small>
+          )}
+          {errors.items && (
+            <div className="text-danger mt-2">{errors.items}</div>
           )}
         </div>
       </div>

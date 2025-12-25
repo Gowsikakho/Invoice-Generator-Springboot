@@ -4,10 +4,11 @@ import { AppContext } from "../context/AppContext";
 import InvoiceForm from "../components/InvoiceForm";
 import TemplateGrid from "../components/TemplateGrid";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
   const [isEditingTitle, setIsEditingTitle] = useState(false);
-
+  const navigate = useNavigate();
   const {
     invoiceTitle,
     setInvoiceTitle,
@@ -76,11 +77,10 @@ const MainPage = () => {
   };
 
   const handleTemplateClick = (templateId) => {
-    if (!validateBeforeTemplate()) return; // toasts are shown by validator
+    if (!validateBeforeTemplate()) return; 
 
-    // All good - apply template
     setSelectedTemplate(templateId);
-    toast.success("Template selected.");
+    navigate('/preview');
   };
 
   const handleTitleChange = (e) => {

@@ -54,6 +54,34 @@ export const AppContextProvider = ({ children }) => {
   const [invoiceTitle, setInvoiceTitle] = useState(initialInvoicedata.title);
   const [invoiceData, setInvoiceData] = useState(initialInvoicedata);
   const [selectedTemplate, setSelectedTemplate] = useState("template1");
+  const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  // Validation function
+  const validateInvoiceData = (data) => {
+    const newErrors = {};
+    
+    if (!data.company?.name?.trim()) {
+      newErrors.companyName = "Company name is required";
+    }
+    
+    if (!data.billing?.name?.trim()) {
+      newErrors.billingName = "Billing name is required";
+    }
+    
+    if (!data.items || data.items.length === 0) {
+      newErrors.items = "At least one item is required";
+    }
+    
+    return newErrors;
+  };
+
+  // Reset invoice data
+  const resetInvoiceData = () => {
+    setInvoiceData(initialInvoicedata);
+    setInvoiceTitle(initialInvoicedata.title);
+    setErrors({});
+  };
 
   const contextValue = {
     invoiceTitle,
@@ -65,6 +93,14 @@ export const AppContextProvider = ({ children }) => {
     selectedTemplate,
     setSelectedTemplate,
 
+    isLoading,
+    setIsLoading,
+
+    errors,
+    setErrors,
+
+    validateInvoiceData,
+    resetInvoiceData,
     initialInvoicedata,
   };
 

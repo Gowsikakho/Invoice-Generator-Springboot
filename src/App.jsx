@@ -5,6 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// Context
+import { AppContextProvider } from "./context/AppContext";
+
 // Components
 import MenuBar from "./components/MenuBar";
 
@@ -16,29 +19,31 @@ import PreviewPage from "./pages/PreviewPage.jsx";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      {/* Top Navigation */}
-      <MenuBar />
+    <AppContextProvider>
+      <BrowserRouter>
+        {/* Top Navigation */}
+        <MenuBar />
 
-      {/* Toast Notifications — REQUIRED for toast.error() to work */}
-      <ToastContainer
-        position="top-right"
-        autoClose={2500}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        pauseOnHover
-        draggable
-      />
+        {/* Toast Notifications — REQUIRED for toast.error() to work */}
+        <ToastContainer
+          position="top-right"
+          autoClose={2500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnHover
+          draggable
+        />
 
-      {/* App Routes */}
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/generate" element={<MainPage />} />
-        <Route path="/preview" element={<PreviewPage />} />
-      </Routes>
-    </BrowserRouter>
+        {/* App Routes */}
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/generate" element={<MainPage />} />
+          <Route path="/preview" element={<PreviewPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AppContextProvider>
   );
 };
 
