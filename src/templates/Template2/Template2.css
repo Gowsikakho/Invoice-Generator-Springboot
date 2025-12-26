@@ -1,0 +1,254 @@
+/* Corporate Invoice Template 2 - Teal Theme */
+.template2-invoice {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: white;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+  line-height: 1.4;
+}
+
+/* Top Teal Bar */
+.teal-bar {
+  width: 100%;
+  height: 12px;
+  background: #20b2aa;
+  margin: 0;
+}
+
+/* Header Section */
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 40px 20px 40px;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.invoice-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+}
+
+.right-header {
+  text-align: right;
+}
+
+.company-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.company-address,
+.company-phone {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+/* Divider Line */
+.header-divider {
+  height: 1px;
+  background: #ddd;
+  margin: 0 40px;
+}
+
+/* Billing Information Section */
+.billing-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px;
+}
+
+.bill-to {
+  flex: 1;
+}
+
+.section-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.customer-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.customer-address,
+.customer-phone {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.invoice-meta {
+  text-align: right;
+  min-width: 200px;
+}
+
+.meta-item {
+  margin-bottom: 16px;
+}
+
+.meta-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.meta-value {
+  font-size: 14px;
+  color: #000;
+}
+
+/* Items Table */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  padding: 0 40px;
+}
+
+.items-table th {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  padding: 12px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.items-table td {
+  padding: 12px 8px;
+  font-size: 14px;
+  color: #000;
+  border-bottom: 1px solid #eee;
+}
+
+.items-col {
+  text-align: left;
+  width: 20%;
+}
+
+.desc-col {
+  text-align: left;
+  width: 25%;
+}
+
+.qty-col {
+  text-align: center;
+  width: 10%;
+}
+
+.price-col,
+.tax-col,
+.amount-col {
+  text-align: right;
+  width: 15%;
+}
+
+/* Notes and Total Section */
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 40px;
+  margin-top: 20px;
+}
+
+.notes-section {
+  flex: 1;
+  max-width: 50%;
+}
+
+.notes-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.notes-text {
+  font-size: 14px;
+  color: #000;
+  line-height: 1.5;
+}
+
+.total-section {
+  text-align: right;
+}
+
+.total-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.total-amount {
+  font-size: 36px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Footer Section */
+.footer-section {
+  background: #f0f8ff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.footer-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.footer-disclaimer {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Print Styles */
+@media print {
+  .template2-invoice {
+    margin: 0;
+  }
+  
+  .teal-bar {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .footer-section {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

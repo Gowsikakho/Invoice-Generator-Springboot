@@ -1,0 +1,279 @@
+/* Corporate Invoice Template 1 */
+.template1-invoice {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 20mm;
+  background: white;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+  line-height: 1.4;
+}
+
+/* Header Section */
+.invoice-header {
+  position: relative;
+  height: 80px;
+  margin-bottom: 40px;
+}
+
+.company-section {
+  position: relative;
+  height: 100%;
+}
+
+.dark-banner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: #2c2c2c;
+  clip-path: polygon(0 0, 85% 0, 75% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.blue-strip {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 45%;
+  height: 100%;
+  background: #a8c8ec;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.company-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+  position: relative;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.company-name {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Invoice Title */
+.invoice-title {
+  margin-bottom: 30px;
+}
+
+.invoice-title h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Invoice Meta Information */
+.invoice-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.invoice-to {
+  flex: 1;
+}
+
+.label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.customer-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.customer-address,
+.customer-phone {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.invoice-details {
+  text-align: right;
+  min-width: 200px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  gap: 20px;
+}
+
+.detail-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 14px;
+  color: #000;
+  font-weight: normal;
+}
+
+/* Divider Line */
+.divider {
+  height: 1px;
+  background: #ddd;
+  margin: 30px 0;
+}
+
+/* Items Table */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.items-table th {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+  padding: 12px 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.items-table td {
+  padding: 12px 8px;
+  font-size: 14px;
+  color: #000;
+  border-bottom: 1px solid #eee;
+}
+
+.item-col {
+  text-align: left;
+  width: 50%;
+}
+
+.qty-col {
+  text-align: center;
+  width: 15%;
+}
+
+.price-col,
+.total-col {
+  text-align: right;
+  width: 17.5%;
+}
+
+.item-name {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.item-desc {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Summary Section */
+.summary-section {
+  margin-left: auto;
+  width: 250px;
+  margin-bottom: 40px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #000;
+}
+
+.summary-row.total-row {
+  font-weight: bold;
+  font-size: 16px;
+  border-top: 1px solid #000;
+  padding-top: 12px;
+  margin-top: 8px;
+}
+
+/* Payment Method Section */
+.payment-section {
+  margin-bottom: 40px;
+}
+
+.payment-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.payment-details div {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+/* Footer Section */
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+.thank-you {
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+}
+
+.signature {
+  font-size: 14px;
+  color: #000;
+  border-top: 1px solid #000;
+  padding-top: 8px;
+  min-width: 150px;
+  text-align: center;
+}
+
+/* Bottom Contact Bar */
+.contact-bar {
+  background: #a8c8ec;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #000;
+  margin: 0 -20mm -20mm -20mm;
+}
+
+/* Print Styles */
+@media print {
+  .template1-invoice {
+    margin: 0;
+    padding: 15mm;
+  }
+  
+  .contact-bar {
+    margin: 0 -15mm -15mm -15mm;
+  }
+}
