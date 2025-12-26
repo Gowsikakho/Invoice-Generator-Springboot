@@ -17,7 +17,7 @@ const LandingPage = () => {
           <p className="lead mb-5" style={{ fontSize: "1.3rem" }}>
             Stop wrestling with spreadsheets. QuickInvoice helps you create and send invoices instantly.
           </p>
-          <button className="btn btn-lg btn-primary fw-bold rounded-pill my-2 px-4">
+          <button className="btn btn-lg btn-primary fw-bold rounded-pill my-2 px-4" style={{backgroundColor: '#3b82f6', borderColor: '#3b82f6'}}>
             Generate Your First Invoice
           </button>
           <br />
@@ -265,7 +265,7 @@ const LandingPage = () => {
             Join thousands of freelancers and small businesses who trust QuickInvoice. Start creating professional
             invoices today — it's fast, easy, and effective!
           </p>
-          <button className="btn btn-primary btn-lg fw-bold rounded-pill px-4">
+          <button className="btn btn-primary btn-lg fw-bold rounded-pill px-4" style={{backgroundColor: '#3b82f6', borderColor: '#3b82f6'}}>
             Start Generating Invoices Now
           </button>
           <p className="mt-3 small opacity-75">(This will lead to the invoice generation interface)</p>

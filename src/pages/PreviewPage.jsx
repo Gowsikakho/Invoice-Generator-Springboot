@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AppContext } from "../context/AppContext";
 import { templates } from "../assets/assets.js";
+import InvoicePreview from "../components/InvoicePreview.jsx";
 
 const PreviewPage = () => {
     const previewRef = useRef();
@@ -97,33 +98,24 @@ const PreviewPage = () => {
                 </div>
             </div>
             <div className="flex-grow-1 overflow-auto d-flex justify-content-center align-items-start bg-light py-3">
-                <div ref={previewRef} className="bg-white shadow rounded p-4" style={{minHeight: "600px", width: "100%", maxWidth: "800px"}}>
-                    {invoiceData.items?.length > 0 ? (
-                        <div className="text-center">
-                            <h4>Invoice Preview</h4>
-                            <p className="text-muted">Template: {selectedTemplate}</p>
-                            <div className="mt-4">
-                                <p><strong>Invoice #:</strong> {invoiceData.invoice?.number}</p>
-                                <p><strong>Company:</strong> {invoiceData.company?.name || "Not specified"}</p>
-                                <p><strong>Items:</strong> {invoiceData.items?.length} item(s)</p>
-                            </div>
-                            <div className="alert alert-info mt-4">
-                                PDF preview will be rendered here with the selected template
-                            </div>
-                        </div>
-                    ) : (
-                        <div className="text-center text-muted">
-                            <h5>No Invoice Data</h5>
-                            <p>Please add items to your invoice to see the preview</p>
-                            <button 
-                                className="btn btn-primary"
-                                onClick={() => navigate("/generate")}
-                            >
-                                Go to Invoice Form
-                            </button>
-                        </div>
-                    )}
-                </div>
+                {invoiceData.items?.length > 0 ? (
+                    <InvoicePreview 
+                        ref={previewRef}
+                        invoiceData={invoiceData}
+                        template={selectedTemplate}
+                    />
+                ) : (
+                    <div className="bg-white shadow rounded p-4 text-center text-muted" style={{minHeight: "600px", width: "100%", maxWidth: "800px"}}>
+                        <h5>No Invoice Data</h5>
+                        <p>Please add items to your invoice to see the preview</p>
+                        <button 
+                            className="btn btn-primary"
+                            onClick={() => navigate("/generate")}
+                        >
+                            Go to Invoice Form
+                        </button>
+                    </div>
+                )}
             </div>
 
 
