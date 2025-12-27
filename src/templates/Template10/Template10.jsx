@@ -19,7 +19,7 @@ const TemplateExact = ({ data = {} }) => {
       {/* HEADER */}
       <div className="header">
         <div className="logo-block">
-          <div className="logo-box">LOGO</div>
+          <div className="logo-box">{data?.companyName?.charAt(0) || 'L'}</div>
           <div className="invoice-text">INVOICE</div>
         </div>
 
