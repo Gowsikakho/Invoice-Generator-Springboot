@@ -10,8 +10,6 @@ import template7 from './template7.png';
 import template8 from './template8.png';
 import template9 from './template9.png';
 import template10 from './template10.png';
-import template11 from './template11.png';
-import template12 from './template12.png';
 export const assets = {
   logo,
   Upload,
@@ -25,8 +23,6 @@ export const assets = {
   template8,
   template9,
   template10,
-  template11,
-  template12,
 
 };
 export const templates=[
@@ -40,7 +36,5 @@ export const templates=[
   {id:"template8", label:"Template 8", image:assets.template8},
   {id:"template9", label:"Template 9", image:assets.template9},
   {id:"template10", label:"Template 10", image:assets.template10},
-  {id:"template11", label:"Template 11", image:assets.template11},
-  {id:"template12", label:"Template 12", image:assets.template12},
 ]
 export default assets;

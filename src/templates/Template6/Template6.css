@@ -1,0 +1,252 @@
+/* Minimal Professional Invoice Template 6 */
+.invoice-container {
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto;
+  padding: 0;
+  background: white;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.invoice-card {
+  width: 100%;
+  height: 297mm;
+  background: white;
+  font-family: 'Inter', 'Helvetica', system-ui, sans-serif;
+  position: relative;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+/* Header - 20% height with light yellow-orange sandal background */
+.header-section {
+  height: 20%;
+  background: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-left h1 {
+  color: #333;
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+.company-logo {
+  width: 80px;
+  height: 60px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.company-details {
+  text-align: right;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.company-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+/* Billing Section */
+.billing-section {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.bill-to,
+.ship-to {
+  flex: 1;
+}
+
+.bill-to h3,
+.ship-to h3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.customer-name {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.bill-to div,
+.ship-to div {
+  color: #666;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+/* Horizontal Line */
+.divider-line {
+  height: 1px;
+  background: #ddd;
+  margin: 0 40px;
+}
+
+/* Bill To */
+.bill-to {
+  margin-bottom: 30px;
+}
+
+/* Items Table */
+.items-table {
+  width: calc(100% - 60px);
+  border-collapse: collapse;
+  margin: 30px;
+}
+
+.items-table th {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 10px;
+  text-align: left;
+  border-bottom: 2px solid #333;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: white;
+}
+
+.desc-header {
+  text-align: left;
+}
+
+.qty-header {
+  text-align: center;
+  width: 10%;
+}
+
+.price-header,
+.amount-header {
+  text-align: right;
+  width: 15%;
+}
+
+.items-table td {
+  padding: 15px 10px;
+  border-bottom: 1px solid #ddd;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 17px;
+  color: #333;
+  background: white;
+}
+
+.desc-cell {
+  text-align: left;
+}
+
+.item-name {
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-size: 17px;
+}
+
+.item-desc {
+  color: #666;
+  font-size: 16px;
+}
+
+.qty-cell {
+  text-align: center;
+}
+
+.price-cell,
+.amount-cell {
+  text-align: right;
+  font-weight: 500;
+}
+
+/* Totals Section */
+.totals-section {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 30px;
+  margin-bottom: 30px;
+}
+
+.totals {
+  min-width: 200px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  color: #333;
+  font-size: 17px;
+}
+
+.final-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-top: 8px;
+  border-top: 1px solid #333;
+  font-weight: 600;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Footer - 8% height with light yellow-orange sandal background */
+.footer-section {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+}
+
+.footer-section p {
+  color: #333;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Print Styles */
+@media print {
+  .invoice-container {
+    margin: 0;
+    padding: 10mm;
+    background: white;
+  }
+  
+  .invoice-card {
+    padding: 15mm;
+  }
+}

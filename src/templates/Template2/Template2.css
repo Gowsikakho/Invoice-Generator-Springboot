@@ -1,12 +1,17 @@
 /* Corporate Invoice Template 2 - Teal Theme */
 .template2-invoice {
   width: 210mm;
-  min-height: 297mm;
+  height: 297mm;
   margin: 0 auto;
   background: white;
   font-family: 'Arial', sans-serif;
   color: #000;
   line-height: 1.4;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* Top Teal Bar */
@@ -220,8 +225,11 @@
 .footer-section {
   background: #f0f8ff;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .footer-text {

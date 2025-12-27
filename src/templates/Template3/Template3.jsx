@@ -83,9 +83,7 @@ const Template3 = ({data}) => {
             <th>Description</th>
             <th>Unit Price</th>
             <th>Qty</th>
-            <th>Net Amount</th>
             <th>Tax Rate</th>
-            <th>Tax Type</th>
             <th>Tax Amount</th>
             <th>Total Amount</th>
           </tr>
@@ -100,9 +98,7 @@ const Template3 = ({data}) => {
               </td>
               <td className="right">{currencySymbol}{item.amount}</td>
               <td className="center">{item.qty}</td>
-              <td className="right">{currencySymbol}{(item.amount * item.qty).toFixed(2)}</td>
               <td className="right">{tax}%</td>
-              <td className="center">IGST</td>
               <td className="right">{currencySymbol}{((item.amount * item.qty * tax) / 100).toFixed(2)}</td>
               <td className="right">{currencySymbol}{item.total}</td>
             </tr>
@@ -112,20 +108,20 @@ const Template3 = ({data}) => {
             <td className="left">Shipping Charges</td>
             <td className="right">{currencySymbol}0.00</td>
             <td className="center">1</td>
-            <td className="right">{currencySymbol}0.00</td>
             <td className="right">0%</td>
-            <td className="center">-</td>
             <td className="right">{currencySymbol}0.00</td>
             <td className="right">{currencySymbol}0.00</td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr className="total-row">
-            <td colSpan="8" className="total-label">TOTAL</td>
-            <td className="total-amount">{currencySymbol}{total}</td>
-          </tr>
-        </tfoot>
       </table>
+      
+      {/* Total Section */}
+      <div className="total-section">
+        <div className="total-row-right">
+          <span className="total-label-right">TOTAL:</span>
+          <span className="total-amount-right">{currencySymbol}{total}</span>
+        </div>
+      </div>
 
       {/* Amount in Words */}
       <div className="amount-words">

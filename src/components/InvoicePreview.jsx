@@ -3,6 +3,13 @@ import { formatInvoiceData } from "../util/formatInvoiceData";
 import Template1 from "../templates/Template1/Template1.jsx";
 import Template2 from "../templates/Template2/Template2.jsx";
 import Template3 from "../templates/Template3/Template3.jsx";
+import Template4 from "../templates/Template4/Template4.jsx";
+import Template5 from "../templates/Template5/Template5.jsx";
+import Template6 from "../templates/Template6/Template6.jsx";
+import Template7 from "../templates/Template7/Template7.jsx";
+import Template8 from "../templates/Template8/Template8.jsx";
+import Template9 from "../templates/Template9/Template9.jsx";
+import Template10 from "../templates/Template10/Template10.jsx";
 
 const InvoicePreview = forwardRef(({invoiceData, template}, ref) => {
     if (!invoiceData) {
@@ -26,23 +33,19 @@ const InvoicePreview = forwardRef(({invoiceData, template}, ref) => {
             case 'template3':
                 return <Template3 data={formattedData} />;
             case 'template4':
-                return <Template1 data={formattedData} />; // Placeholder - will create Template4
+                return <Template4 data={formattedData} />;
             case 'template5':
-                return <Template1 data={formattedData} />; // Placeholder - will create Template5
+                return <Template5 data={formattedData} />;
             case 'template6':
-                return <Template1 data={formattedData} />; // Placeholder - will create Template6
+                return <Template6 data={formattedData} />;
             case 'template7':
-                return <Template1 data={formattedData} />; // Placeholder - will create Template7
+                return <Template7 data={formattedData} />;
             case 'template8':
-                return <Template1 data={formattedData} />; // Placeholder - will create Template8
+                return <Template8 data={formattedData} />;
             case 'template9':
-                return <Template1 data={formattedData} />; // Placeholder - will create Template9
+                return <Template9 data={formattedData} />;
             case 'template10':
-                return <Template1 data={formattedData} />; // Placeholder - will create Template10
-            case 'template11':
-                return <Template1 data={formattedData} />; // Placeholder - will create Template11
-            case 'template12':
-                return <Template1 data={formattedData} />; // Placeholder - will create Template12
+                return <Template10 data={formattedData} />;
             default:
                 return <Template1 data={formattedData} />;
         }

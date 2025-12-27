@@ -1,0 +1,225 @@
+/* ===============================
+   Professional Accounting Invoice Template 8
+   =============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Page
+   =============================== */
+
+.invoice-a4 {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  margin: 0 auto;
+  padding: 20mm;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  position: relative;
+}
+
+/* ===============================
+   Header
+   =============================== */
+
+.invoice-header {
+  margin-bottom: 30px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.company-logo {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.invoice-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header-right {
+  margin-top: 10px;
+}
+
+.company-details div {
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* Divider */
+.divider-line {
+  height: 1px;
+  background: #bdbdbd;
+  margin: 20px 0;
+}
+
+/* ===============================
+   Bill To Section
+   =============================== */
+
+.bill-to-section {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.bill-to-left {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.section-label {
+  font-size: 10px;
+  color: #666666;
+}
+
+.bill-to-right {
+  flex: 1;
+}
+
+.customer-name {
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.bill-to-right div {
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* Invoice meta (right aligned) */
+.invoice-number-right {
+  width: 220px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.invoice-number-right div {
+  font-size: 10px;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+/* ===============================
+   BLUE SECTION HEADERS (ROUNDED)
+   =============================== */
+
+.section-header {
+  background-color: #2f6fa5;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 8px 12px;
+  margin: 30px 0 12px;
+
+  /* ✅ Rounded corners */
+  border-radius: 6px;
+
+  /* Optional polish */
+  letter-spacing: 0.3px;
+}
+
+/* ===============================
+   Items Table
+   =============================== */
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+
+.items-table th {
+  background: #f2f2f2;
+  border: 1px solid #bdbdbd;
+  padding: 6px;
+  font-weight: 600;
+}
+
+.items-table td {
+  border: 1px solid #bdbdbd;
+  padding: 6px;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+/* ===============================
+   Totals Section
+   =============================== */
+
+.totals-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+}
+
+.totals-table {
+  min-width: 220px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 11px;
+}
+
+.balance-due {
+  font-weight: 600;
+  border-top: 1px solid #bdbdbd;
+  margin-top: 6px;
+  padding-top: 6px;
+}
+
+/* ===============================
+   Payment Information
+   =============================== */
+
+.payment-info div {
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* ===============================
+   Notes Section
+   =============================== */
+
+.notes-section div {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #666666;
+}
+
+/* ===============================
+   Print Styles
+   =============================== */
+
+@media print {
+  body {
+    margin: 0;
+  }
+
+  .invoice-a4 {
+    margin: 0;
+    width: 210mm;
+    min-height: 297mm;
+    page-break-after: always;
+  }
+}

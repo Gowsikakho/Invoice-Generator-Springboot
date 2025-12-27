@@ -192,7 +192,7 @@ const LandingPage = () => {
                     <p className="text-muted">Hover to see answer</p>
                   </div>
                   <div className="faq-card-back">
-                    <p>Absolutely! You can add your logo, customize colors, and modify fields to match your brand. Choose from 12+ professional templates.</p>
+                    <p>Absolutely! You can add your logo, customize colors, and modify fields to match your brand. Choose from 10 professional templates.</p>
                   </div>
                 </div>
               </div>
