@@ -16,6 +16,7 @@ import LandingPage from "./pages/LandingPage/LandingPage.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import MainPage from "./pages/MainPage.jsx";
 import PreviewPage from "./pages/PreviewPage.jsx";
+import Profile from "./pages/Profile.jsx";
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/generate" element={<MainPage />} />
           <Route path="/preview" element={<PreviewPage />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </AppContextProvider>
