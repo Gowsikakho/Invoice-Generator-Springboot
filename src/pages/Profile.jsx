@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FileText, Plus, Eye, User, Save, Building, Mail, Phone, MapPin, CreditCard, Globe } from "lucide-react";
 
@@ -79,10 +79,19 @@ const Profile = () => {
     };
 
     const handleSave = () => {
-        // Save profile data logic here
+        // Save profile data to localStorage
+        localStorage.setItem('userProfile', JSON.stringify(profileData));
         console.log("Profile saved:", profileData);
         alert("Profile saved successfully!");
     };
+
+    // Load saved profile data on component mount
+    useEffect(() => {
+        const savedProfile = localStorage.getItem('userProfile');
+        if (savedProfile) {
+            setProfileData(JSON.parse(savedProfile));
+        }
+    }, []);
 
     return (
         <div className="d-flex min-vh-100 bg-gray-50">

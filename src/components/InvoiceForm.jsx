@@ -94,6 +94,30 @@ const InvoiceForm = () => {
   };
 
   useEffect(() => {
+    // Load profile data and sync with invoice form
+    const savedProfile = localStorage.getItem('userProfile');
+    if (savedProfile) {
+      const profile = JSON.parse(savedProfile);
+      
+      // Pre-fill company information from profile
+      setInvoiceData((prev) => ({
+        ...prev,
+        company: {
+          name: profile.businessName || prev.company.name,
+          phone: profile.phone || prev.company.phone,
+          address: `${profile.streetAddress || ''} ${profile.city || ''} ${profile.state || ''} ${profile.zipCode || ''}`.trim() || prev.company.address,
+        },
+        account: {
+          name: profile.bankName || prev.account.name,
+          number: profile.accountNumber || prev.account.number,
+          ifsccode: profile.ifscCode || prev.account.ifsccode,
+        },
+        tax: profile.defaultTax || prev.tax,
+        logo: profile.logo || prev.logo,
+      }));
+    }
+
+    // Generate invoice number if not exists
     if (!invoiceData.invoice.number) {
       const randomNumber = `INV-${Math.floor(100000 + Math.random() * 900000)}`;
       setInvoiceData((prev) => ({
