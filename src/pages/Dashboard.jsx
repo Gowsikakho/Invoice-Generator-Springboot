@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
-import { FileText, Plus, Eye, DollarSign, Lightbulb, ArrowRight } from "lucide-react";
+import { FileText, Plus, Eye, Lightbulb, ArrowRight } from "lucide-react";
 import "../dashboard.css";
 
 const Dashboard = () => {
@@ -26,9 +26,9 @@ const Dashboard = () => {
     };
 
     const formatCurrency = (amount) => {
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat('en-IN', {
             style: 'currency',
-            currency: 'USD'
+            currency: 'INR'
         }).format(amount);
     };
 
@@ -111,7 +111,7 @@ const Dashboard = () => {
                     <div className="bg-white rounded-lg shadow-sm p-6">
                         <div className="flex items-center">
                             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                                <DollarSign className="text-green-600" size={24} />
+                                <span className="text-green-600 text-2xl font-bold">₹</span>
                             </div>
                             <div>
                                 <p className="text-sm font-medium text-gray-600">Total Paid</p>
@@ -124,7 +124,7 @@ const Dashboard = () => {
                     <div className="bg-white rounded-lg shadow-sm p-6">
                         <div className="flex items-center">
                             <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                                <DollarSign className="text-red-600" size={24} />
+                                <span className="text-red-600 text-2xl font-bold">₹</span>
                             </div>
                             <div>
                                 <p className="text-sm font-medium text-gray-600">Total Unpaid</p>
