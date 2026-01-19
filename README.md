@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/assests/image.png" alt="QuickInvoice Preview" />
+  <img src="src/assets/image.png" alt="QuickInvoice Preview">
 </p>
 # QuickInvoice - Professional Invoice Generator
 
