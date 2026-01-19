@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="assets/image.png" alt="QuickInvoice Preview" width="100%" />
+</p>
 # QuickInvoice - Professional Invoice Generator
 
 A modern, user-friendly React application for creating and managing professional invoices. Built with React 19, Vite, and Bootstrap, this application provides a seamless experience for freelancers and small businesses to generate, customize, and download invoices.
